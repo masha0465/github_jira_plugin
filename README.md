@@ -22,48 +22,11 @@
    npm install axios @octokit/rest
 🔧 Jira와 GitHub API 연동
 Jira API 호출 예시
-javascript
-복사
-편집
-const axios = require('axios');
+![image](https://github.com/user-attachments/assets/68126552-cfb6-4a7a-adf0-34ced3759a5b)
 
-// Jira API 설정
-const JIRA_URL = 'https://your-jira-instance.atlassian.net/rest/api/3/issue';
-const JIRA_API_TOKEN = 'your-jira-api-token';
-const JIRA_USER = 'your-email@example.com';
-
-// Jira 이슈 생성 함수
-async function createJiraIssue(issueData) {
-  const auth = Buffer.from(`${JIRA_USER}:${JIRA_API_TOKEN}`).toString('base64');
-  const config = {
-    headers: {
-      'Authorization': `Basic ${auth}`,
-      'Content-Type': 'application/json',
-    }
-  };
-
-  const response = await axios.post(JIRA_URL, issueData, config);
-  return response.data;
-}
 GitHub API 호출 예시
-javascript
-복사
-편집
-const { Octokit } = require("@octokit/rest");
+![image](https://github.com/user-attachments/assets/45e32629-a60d-41a3-a300-26b029da2fe6)
 
-// GitHub API 설정
-const octokit = new Octokit({ auth: 'your-github-token' });
-
-// GitHub 이슈 업데이트 함수
-async function updateGitHubIssue(owner, repo, issueNumber, issueData) {
-  const response = await octokit.issues.update({
-    owner,
-    repo,
-    issue_number: issueNumber,
-    ...issueData
-  });
-  return response.data;
-}
 🚀 플러그인 기능 설계
 1. GitHub 이슈가 생성될 때
 GitHub에서 이슈가 생성되면 Jira에 해당 이슈를 자동으로 생성합니다.

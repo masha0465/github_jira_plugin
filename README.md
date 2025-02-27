@@ -22,9 +22,12 @@
    npm install axios @octokit/rest
 🔧 Jira와 GitHub API 연동
 Jira API 호출 예시
+
 ![image](https://github.com/user-attachments/assets/68126552-cfb6-4a7a-adf0-34ced3759a5b)
 
+
 GitHub API 호출 예시
+
 ![image](https://github.com/user-attachments/assets/45e32629-a60d-41a3-a300-26b029da2fe6)
 
 🚀 플러그인 기능 설계
